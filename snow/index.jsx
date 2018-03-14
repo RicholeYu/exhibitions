@@ -111,23 +111,23 @@ snowCanvas.height = window.innerHeight;
                 flake.velX *= 0.98;
                 
                 
-                if (flake.velY < 0) {
+                // if (flake.velY < 0) {
 
-                    // 若纵向速度为负的雪花，雪花速度越来越小，最后变为正值
-                    flake.velY *= 0.99999999;
-                    if (flake.velY < -0.000001) {
-                        console.log(flake.velY)
-                        flake.velY = 0.0001;
-                    }
-                } else if (flake.velY < flake.speed && flake.velY > 0.0) {
+                //     // 若纵向速度为负的雪花，雪花速度越来越小，最后变为正值
+                //     flake.velY *= 0.99999999;
+                //     if (flake.velY < -0.000001) {
+                //         console.log(flake.velY)
+                //         flake.velY = 0.0001;
+                //     }
+                // } else if (flake.velY < flake.speed && flake.velY > 0.0) {
 
-                    // 若纵向速度为正值且速度小于，正常下落速度，速度越来越大
-                    flake.velY *= 1.02;
-                } else if (flake.velY > flake.speed) {
+                //     // 若纵向速度为正值且速度小于，正常下落速度，速度越来越大
+                //     flake.velY *= 1.02;
+                // } else if (flake.velY > flake.speed) {
 
-                    // 若纵向速度大约正常下落速度，恢复正常速度
-                    flake.velY = flake.speed
-                }
+                //     // 若纵向速度大约正常下落速度，恢复正常速度
+                //     flake.velY = flake.speed
+                // }
 
                 // 横向坐标一直以COS曲线走
                 flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
