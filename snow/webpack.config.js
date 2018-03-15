@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname, './index.jsx'),
+    entry: path.resolve(__dirname, './index.js'),
     output: {
         path: path.resolve(__dirname, './'),
         publicPath:"/",
@@ -11,26 +11,21 @@ module.exports = {
     module: {
         rules: [{
             loader: 'babel-loader',
-
-            // 在node_modules的文件不被babel编译
             exclude: [
                 path.resolve(__dirname, 'node_modules'),
             ],
 
-            // src的文件会被babel编译
             include:[
-                path.resolve(__dirname, 'src'),
+                path.resolve(__dirname, './'),
             ],
 
-            // 只有jsx或者js文件会被编译
-            test: /\.js|jsx$/,
+            test: /\.js$/,
             query:{
 
                 // babel支持把以下格式编译成 ES5语法
                 presets:[
                     'es2015', // ES6
                     'stage-0', // ES7
-                    'react' // JSX
                 ]
             }
         },
