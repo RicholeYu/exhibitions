@@ -4,12 +4,15 @@ module.exports = {
     entry: path.resolve(__dirname, './src/main.js'),
     output: {
         path: path.resolve(__dirname, './src/build/'),
-        publicPath:"/src/build",
+        publicPath: "/src/build/",
         filename: "bundle.js"
     },
     devtool: "source-map",
     resolve: {
-        extensions: ['.js', '.vue', '.json']
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
     },
     module: {
         rules: [{
@@ -49,7 +52,7 @@ module.exports = {
         },
         {
             // 图片加载器
-            test:/\.(png|jpg|gif|jpeg)$/,
+            test:/\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
             loader:'url-loader'
         }
     ]

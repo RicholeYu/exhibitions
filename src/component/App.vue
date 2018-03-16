@@ -1,23 +1,30 @@
 <template>
-  <div id="app" class="page">
-    {{ message }}
+  <div class="page">
+      <Search />
+      <Tags />
   </div>
 </template>
 
-<script>
-  export default {
-      data () {
-          return {
-            message: 'Hello Richole!!!!!'
-          }
-      }
-  }
-</script>
-
 <style lang="less" rel="stylesheet/less">
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: "Microsoft Yahei";
+    }
+
     body {
-        .page {
-            color: red;
-        }
+        background: url(../static/image/bg.png) repeat;
     }
 </style>
+
+<script>
+    import Search from "./Search";
+    import Tags from "./Tags";
+    
+    export default {
+        components: { Search, Tags }
+    };
+
+</script>
+
+
