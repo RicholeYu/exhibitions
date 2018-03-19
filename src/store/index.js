@@ -12,8 +12,8 @@ const store = new Vuex.Store({
             src: './snow/index.html',
             hidden: false
         }, {
-            title: '弹雪花1',
-            src: './snow/index.html',
+            title: 'Service Worker 初体验',
+            src: './serviceWorker/index.html',
             hidden: false
         }, {
             title: '弹雪花2',
