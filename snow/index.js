@@ -1,32 +1,36 @@
 import "./index.less";
+import _$ from 'jquery';
 
-const screenWidth = screen.width;
-const screenHeight = screen.height;
-const snowCanvas = document.getElementById('snow');
-const ctx = snowCanvas.getContext("2d");
-
-snowCanvas.width = window.innerWidth;
-snowCanvas.height = window.innerHeight;
-
-
-(function () {
-
+new Promise((resolve) => {
+    _$(function () {
+        if (!_$('#snow')[0]) {
+            _$('body').append(_$(`<div class="snow_ct"><canvas id="snow"></canvas></div>`));
+        }
+        resolve(true);
+    })
+})
+.then(() => {
     // 解决requestAnimationFrame 的浏览器兼容，不支持的浏览器已每秒60帧设置
 
     let _RequestAnimationFrame = function (callback) {
-            window.setTimeout(callback, 1000 / 60);
-        },
-        requestAnimationFrame = window.requestAnimationFrame ||
-                                window.mozRequestAnimationFrame ||
-                                window.webkitRequestAnimationFrame ||
-                                window.msRequestAnimationFrame ||
-                                _RequestAnimationFrame;
+        window.setTimeout(callback, 1000 / 60);
+    },
+    requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame ||
+                            _RequestAnimationFrame;
 
     window.requestAnimationFrame = requestAnimationFrame;
-})();
+})
+.then(() => {
+    const screenWidth = screen.width;
+    const screenHeight = screen.height;
+    const snowCanvas = document.getElementById('snow');
+    const ctx = snowCanvas.getContext("2d");
 
-
-(function () {
+    snowCanvas.width = window.innerWidth;
+    snowCanvas.height = window.innerHeight;
 
     // 鼠标初始化坐标，雪花个数，雪花容器数组
     let mX = -200,
@@ -175,4 +179,4 @@ snowCanvas.height = window.innerHeight;
     // 显示一帧画面
     oneFrameCanvas();
 
-})();
+});

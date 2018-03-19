@@ -10,7 +10,9 @@ const store = new Vuex.Store({
         lists: [{
             title: '弹雪花',
             src: './snow/index.html',
-            hidden: false
+            hidden: false,
+            isChoose: true,
+            entry: './snow/bundle.js'
         }, {
             title: 'Service Worker 初体验',
             src: './serviceWorker/index.html',
@@ -79,7 +81,7 @@ const store = new Vuex.Store({
                 let related = list.title.indexOf(tagName) > -1;
                 list.hidden = !related;
             });
-        } 
+        }
     }
 });
 
