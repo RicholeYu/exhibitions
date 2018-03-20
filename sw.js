@@ -1,10 +1,10 @@
 const VERSION = 'v1'; // 缓存文件的版本
 const CACHE_FILES = [ // 需要缓存的页面文件
-    '/src/build/',
-    '/src/build/main_bundle.js',
-    '/src/build/main_bundle.js.map',
-    '/src/build/snow_bundle.js',
-    '/src/build/snow_bundle.js.map'
+    '/exhibitions/src/build/',
+    '/exhibitions/src/build/main_bundle.js',
+    '/exhibitions/src/build/main_bundle.js.map',
+    '/exhibitions/src/build/snow_bundle.js',
+    '/exhibitions/src/build/snow_bundle.js.map'
 ];
 
 self.addEventListener('install', (event) => {
