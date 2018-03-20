@@ -11,8 +11,8 @@ export default function (vm) {
     }
 
     if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('./sw.js', {
-            scope: '/'
+        navigator.serviceWorker.register('/exhibitions/sw.js', {
+            scope: '/exhibitions/'
         }).then((registration) => {
 
             if (registration.installing) {
