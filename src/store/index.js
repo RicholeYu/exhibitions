@@ -12,11 +12,14 @@ const store = new Vuex.Store({
             src: './snow/index.html',
             hidden: false,
             isChoose: true,
-            entry: './snow/bundle.js'
+            entry: './src/build/snow_bundle.js'
         }, {
             title: 'Service Worker 初体验',
             src: './serviceWorker/index.html',
-            hidden: false
+            hidden: false,
+            isChoose: true,
+            runInApp: true,
+            type: 'SERVICE_WORKER'
         }, {
             title: '弹雪花2',
             src: './snow/index.html',

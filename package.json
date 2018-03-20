@@ -36,6 +36,8 @@
   "devDependencies": {
     "babel-plugin-import": "^1.6.7",
     "file-loader": "^1.1.11",
-    "vue-template-compiler": "^2.5.16"
+    "jquery": "^3.3.1",
+    "vue-template-compiler": "^2.5.16",
+    "web-push": "^3.3.0"
   }
 }

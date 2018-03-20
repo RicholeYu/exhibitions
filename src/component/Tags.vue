@@ -78,8 +78,8 @@
 </style>
 
 <script>
-import scriptImport from '../script';
-
+import scriptImport from "../script";
+import runExhibition from "../exhibition/index";
 export default {
   data() {
     return {
@@ -107,19 +107,27 @@ export default {
     },
 
     choose() {
+      let choosedList = this.$data.choosedList;
+      if (choosedList.runInApp) {
+        runExhibition(choosedList.type, this);
+        return;
+      }
+      
       this.$Modal.confirm({
-        title: '示例浏览选择',
-        content: '您要选择在当前网页显示该效果吗？',
+        title: "示例浏览选择",
+        content: "您要选择在当前网页显示该效果吗？",
         okText: "在当前网页浏览",
         cancelText: "打开新网页浏览",
         onOk: () => {
-            scriptImport(this.$data.choosedList.entry);
+          if (choosedList.entry) {
+            scriptImport(choosedList.entry);
+          }
         },
         onCancel: () => {
-            this.$data.modal5 = false;
-            setTimeout(() => {
-                window.open(this.$data.choosedList.src);
-            }, 500);
+          this.$data.modal5 = false;
+          setTimeout(() => {
+            window.open(choosedList.src);
+          }, 500);
         }
       });
     }

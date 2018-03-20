@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, './src/main.js')
+        main: path.resolve(__dirname, './src/main.js'),
+        snow: path.resolve(__dirname, './src/exhibition/snow/index.js')
     },
     output: {
         path: path.resolve(__dirname, './src/build/'),
