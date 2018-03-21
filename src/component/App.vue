@@ -6,15 +6,16 @@
 </template>
 
 <style lang="less" rel="stylesheet/less">
+
 @media screen and (min-width: 1024px) {
   html {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   html {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
 
@@ -25,7 +26,13 @@
 }
 
 body {
+
   background: url(../static/image/bg.png) repeat;
+
+  .page {
+    overflow-x: hidden;
+  }
+
 }
 </style>
 
