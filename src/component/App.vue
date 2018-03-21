@@ -6,25 +6,36 @@
 </template>
 
 <style lang="less" rel="stylesheet/less">
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: "Microsoft Yahei";
-    }
+@media screen and (min-width: 1024px) {
+  html {
+      font-size: 12px;
+  }
+}
 
-    body {
-        background: url(../static/image/bg.png) repeat;
-    }
+@media screen and (max-width: 1024px) {
+  html {
+      font-size: 10px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft Yahei";
+}
+
+body {
+  background: url(../static/image/bg.png) repeat;
+}
 </style>
 
 <script>
-    import Search from "./Search";
-    import Tags from "./Tags";
-    
-    export default {
-        components: { Search, Tags }
-    };
+import Search from "./Search";
+import Tags from "./Tags";
 
+export default {
+  components: { Search, Tags }
+};
 </script>
 
 

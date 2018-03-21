@@ -13,20 +13,30 @@
 </template>
 
 <style lang="less">
+@media screen and (min-width: 1024px) {
+    .home-tags {
+        width: 75%;
+    }
+};
+
+@media screen and (max-width: 1024px) {
+    .home-tags {
+        width: 90%;
+    }
+};
 .home-tags {
-  font-size: 16px;
+  font-size: 1.6rem;
   text-align: center;
-  margin: 50px auto;
-  width: 75%;
-  max-width: 1720px;
+  margin: 5rem auto;
+  max-width: 172rem;
   line-height: 1.7;
 }
 
 .home-tags .htags-tag {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: #5e95bc;
   display: inline-block;
-  margin: 0 20px;
+  margin: 0 2rem;
   text-decoration: none;
 }
 
@@ -36,7 +46,7 @@
 
 .home-tags .htags-tag::before {
   content: "#";
-  vertical-align: -2px;
+  vertical-align: -.2rem;
   color: #3c6e91;
 }
 
